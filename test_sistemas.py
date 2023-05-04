@@ -4,6 +4,26 @@ from octal import Octal
 from binario import Binario
 from decimal import Decimal
 
+class TestSistemaOctal(unittest.TestCase):
+
+    def testOctalADecimal(self):
+        oc = Octal()
+        result = oc.OctalADecimal(412)
+        self.assertEqual(result, 266)
+
+    def testOctalADecimal_II(self):
+        oc = Octal()
+        result = oc.OctalADecimal(572)
+        self.assertEqual(result, 378)
+
+    def testOctalADecimal_III(self):
+        oc = Octal()
+        result = oc.OctalADecimal(2077)
+        self.assertEqual(result, 1087)
+
+
+
+
 class TestSistemaBinario(unittest.TestCase):
 
     #! BINARIO A DECIMAL
