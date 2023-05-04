@@ -190,7 +190,39 @@ class TestSistemaBinario(unittest.TestCase):
         result = deci.decimalABinario(144)
         self.assertEqual(result, '10010000')
 
+    #! DECIMAL A HEXADECIMAL
 
+    def testDecimalAHexadecimal(self):
+        deci = Decimal()
+        result = deci.decimalAHexadecimal(719)
+        self.assertEqual(result, '2CF')
+
+    def testDecimalAHexadecimal_II(self):
+        deci = Decimal()
+        result = deci.decimalAHexadecimal(2077)
+        self.assertEqual(result, '81D')
+
+    def testDecimalAHexadecimal_III(self):
+        deci = Decimal()
+        result = deci.decimalAHexadecimal(3333)
+        self.assertEqual(result, 'D05')
+
+    #! DECIMAL A OCTAL
+
+    def testDecimalAOctal(self):
+        deci = Decimal()
+        result = deci.decimalAOctal(4952)
+        self.assertEqual(result, '11530')
+
+    def testDecimalAOctal_II(self):
+        deci = Decimal()
+        result = deci.decimalAOctal(2077)
+        self.assertEqual(result, '4035')
+
+    def testDecimalAOctal_III(self):
+        deci = Decimal()
+        result = deci.decimalAOctal(2170)
+        self.assertEqual(result, '4172')
 
 
 if __name__ == '__main__':
