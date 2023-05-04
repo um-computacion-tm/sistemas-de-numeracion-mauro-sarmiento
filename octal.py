@@ -1,3 +1,4 @@
+from binario import Binario
 
 class Octal:
     def OctalADecimal(self, numero_octal):
@@ -14,8 +15,21 @@ class Octal:
             decimal += value
         return decimal
     
-    def OctalAHexadecimal(self, numero_octal):
-        pass
-
     def OctalABinario(self, numero_octal):
-        pass
+        numero_octal = str(numero_octal)
+        binario_octal = {0:'000', 1:'001', 2:'010', 3:'011', 4:'100', 5:'101', 6:'110', 7:'111'}
+        num_bin = ''
+        for i in range(len(numero_octal)):
+            div = int(numero_octal[i])
+            if div in binario_octal:
+                num_bin += str(binario_octal[div])
+        return (num_bin)
+
+
+    def OctalAHexadecimal(self, numero_octal):
+        numero_octal = str(numero_octal)
+        bin = Binario()
+        octo = Octal().OctalABinario(numero_octal)
+        hexa = bin.binarioAHexadecimal(octo)
+        return hexa
+

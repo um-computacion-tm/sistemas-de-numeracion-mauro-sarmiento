@@ -4,7 +4,30 @@ from octal import Octal
 from binario import Binario
 from decimal import Decimal
 
+
+class TestSistemaHexadecimal(unittest.TestCase):
+
+    #! HEXADECIMAL A BINARIO
+
+    def testHexadecimalABinario(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalABinario('FF')
+        self.assertEqual(result, '11111111')
+
+    def testHexadecimalABinario_II(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalABinario('81D')
+        self.assertEqual(result, '100000011101')
+    
+    def testHexadecimalABinario_III(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalABinario('17E')
+        self.assertEqual(result, '000101111110')
+
+
 class TestSistemaOctal(unittest.TestCase):
+
+    #! OCTAL A DECIMAL
 
     def testOctalADecimal(self):
         oc = Octal()
@@ -21,7 +44,39 @@ class TestSistemaOctal(unittest.TestCase):
         result = oc.OctalADecimal(2077)
         self.assertEqual(result, 1087)
 
+    #! OCTAL A BINARIO
 
+    def testOctalABinario(self):
+        oc = Octal()
+        result = oc.OctalABinario(7654)
+        self.assertEqual(result, '111110101100')
+
+    def testOctalABinario_II(self):
+        oc = Octal()
+        result = oc.OctalABinario(2077)
+        self.assertEqual(result, '010000111111')
+
+    def testOctalABinario_III(self):
+        oc = Octal()
+        result = oc.OctalABinario(17)
+        self.assertEqual(result, '001111')
+
+    #! OCTAL A HEXADECIMAL
+
+    def testOctalAHexadecimal(self):
+        oc = Octal()
+        result = oc.OctalAHexadecimal(2077)
+        self.assertEqual(result, '43F')
+
+    def testOctalAHexadecimal_II(self):
+        oc = Octal()
+        result = oc.OctalAHexadecimal(17)
+        self.assertEqual(result, 'F')
+
+    def testOctalAHexadecimal_III(self):
+        oc = Octal()
+        result = oc.OctalAHexadecimal(2001)
+        self.assertEqual(result, '401')
 
 
 class TestSistemaBinario(unittest.TestCase):
@@ -59,6 +114,11 @@ class TestSistemaBinario(unittest.TestCase):
         bin = Binario()
         result = bin.binarioAHexadecimal('10110010111')
         self.assertEqual(result, '597')
+
+    def testBinarioAHexadecimal_IV(self):
+        bin = Binario()
+        result = bin.binarioAHexadecimal('001111')
+        self.assertEqual(result, 'F')
     
     #! BINARIO A OCTAL
 
