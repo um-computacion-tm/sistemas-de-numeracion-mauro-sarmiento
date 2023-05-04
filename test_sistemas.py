@@ -41,7 +41,6 @@ class TestSistemaHexadecimal(unittest.TestCase):
         result = hexa.HexadecimalAOctal('7D1')
         self.assertEqual(result, 3721)
 
-
     #! HEXADECIMAL A DECIMAL
 
     def testHexadecimalADecimal(self):
@@ -58,7 +57,6 @@ class TestSistemaHexadecimal(unittest.TestCase):
         hexa = Hexadecimal()
         result = hexa.HexadecimalADecimal('7D1')
         self.assertEqual(result, 2001)
-
 
 
 class TestSistemaOctal(unittest.TestCase):
@@ -113,6 +111,7 @@ class TestSistemaOctal(unittest.TestCase):
         oc = Octal()
         result = oc.OctalAHexadecimal(2001)
         self.assertEqual(result, '401')
+
 
 
 class TestSistemaBinario(unittest.TestCase):
@@ -173,7 +172,25 @@ class TestSistemaBinario(unittest.TestCase):
         result = bin.binarioAOctal('10011011')
         self.assertEqual(result, 233)
 
-    
+class TestSistemaBinario(unittest.TestCase):
+
+    #! DECIMAL A BINARIO
+    def testDecimalABinario(self):
+        deci = Decimal()
+        result = deci.decimalABinario(36)
+        self.assertEqual(result, '100100')
+
+    def testDecimalABinario_II(self):
+        deci = Decimal()
+        result = deci.decimalABinario(2077)
+        self.assertEqual(result, '100000011101')
+
+    def testDecimalABinario_III(self):
+        deci = Decimal()
+        result = deci.decimalABinario(144)
+        self.assertEqual(result, '10010000')
+
+
 
 
 if __name__ == '__main__':
