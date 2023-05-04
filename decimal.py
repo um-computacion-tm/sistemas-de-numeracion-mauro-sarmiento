@@ -47,3 +47,4 @@ class Decimal:
             numero_octal += str(octales[i])
         numero_octal = numero_octal[::-1]
         return numero_octal
+    
