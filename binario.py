@@ -27,6 +27,8 @@ class Binario:
             division = numero_binario[i:i+4]
             if division in binario:
                 hexadecimal += str(binario[division])
+        if hexadecimal[0] == '0':
+            hexadecimal = hexadecimal[1:]
         return hexadecimal
 
 
