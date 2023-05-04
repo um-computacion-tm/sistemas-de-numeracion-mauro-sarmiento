@@ -24,6 +24,42 @@ class TestSistemaHexadecimal(unittest.TestCase):
         result = hexa.HexadecimalABinario('17E')
         self.assertEqual(result, '000101111110')
 
+    #! HEXADECIMAL A OCTAL
+
+    def testHexadecimalAOctal(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalAOctal('6F5')
+        self.assertEqual(result, 3365)
+
+    def testHexadecimalAOctal_II(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalAOctal('81D')
+        self.assertEqual(result, 4035)
+
+    def testHexadecimalAOctal_III(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalAOctal('7D1')
+        self.assertEqual(result, 3721)
+
+
+    #! HEXADECIMAL A DECIMAL
+
+    def testHexadecimalADecimal(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalADecimal('3E')
+        self.assertEqual(result, 62)
+
+    def testHexadecimalADecimal_II(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalADecimal('81D')
+        self.assertEqual(result, 2077)
+
+    def testHexadecimalADecimal_III(self):
+        hexa = Hexadecimal()
+        result = hexa.HexadecimalADecimal('7D1')
+        self.assertEqual(result, 2001)
+
+
 
 class TestSistemaOctal(unittest.TestCase):
 
